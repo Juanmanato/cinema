@@ -8,7 +8,8 @@ export default function PublicRoute() {
     <div>
       <Routes>
             <Route path="/" element= {<Home/>}/>
-            <Route path="/movie/:id" element= {<Detail/>}/>   
+            <Route path="/movie/:id" element= {<Detail/>}/>
+            <Route path="/movieresults/:id" element= {<Detail/>}/>   
       </Routes>
     </div>
   )

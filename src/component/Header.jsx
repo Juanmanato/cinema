@@ -1,11 +1,9 @@
 import React from 'react'
-import Menu from '../component/Menu'
-import Searching from '../component/Searching'
+import Menu from './Menu'
 export default function Header() {
   return (
     <div className="header-logo" >
       <Menu/>
-      <Searching/>
      </div>
   )
 }

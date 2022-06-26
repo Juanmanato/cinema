@@ -6,10 +6,10 @@ export default function Movie(props) {
     const movie = props
     const URL = 'https://image.tmdb.org/t/p/w500'
   return (
-    <div className="one-movie">
+    <div className="div-movie">
 
-    <Card style={{ width: '12rem' }}>
-            <Card.Img variant="top" src={URL+movie.poster_path} />
+    <Card >
+            <Card.Img variant="top" style={{ width: '14rem' }} src={URL+movie.poster_path} />
     </Card>
 
     <Button as = {Link} to = {'/movie/' + movie.id} className="button-menu">Details</Button>

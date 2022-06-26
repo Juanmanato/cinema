@@ -1,5 +1,5 @@
 import React from 'react'
-import Input from '../component/Input'
+import Input from './Input'
 export default function Register() {
   return (
     <>

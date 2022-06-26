@@ -2,13 +2,13 @@ import React from 'react'
 import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import { getMovieById } from '../service/MovieService'
+import {Button} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 
 export default function Detail() {
 
   const {id} = useParams()
   const [movieId, setMovieId] = useState({})
-  const [lenguages, setLenguages] = useState([])
-  const [genres, setGenres] = useState([])
   const URL = 'https://image.tmdb.org/t/p/w500'
 
   useEffect(() =>{
@@ -17,11 +17,6 @@ export default function Detail() {
         const response = await getMovieById(id)
         console.log(response)
         setMovieId(response)
-        setLenguages(response.spoken_languages)
-        console.log(response.spoken_languages)
-        setGenres(response.genres)
-        console.log(response.genres)
-
       }catch(e){
         console.log(e)
       }
@@ -29,11 +24,11 @@ export default function Detail() {
     movie()
   },[id])
 
-
   return (
     <>
     <h1 className="title1">{movieId.original_title}</h1>
     <div className="list-group-movies" >
+    <Button as = {Link} to = {'/'} className="button-menu">Back</Button>
      <div className="">
      <h1 className="color-text1">Description</h1>
       <p className="color-text1">{movieId.overview}</p>
@@ -46,9 +41,9 @@ export default function Detail() {
           <li>Popularity: {movieId.popularity}</li>
           <li>Vote: {movieId.vote_average}</li>
           <h5 className="color-text1">Idiomas:</h5>
-          {lenguages.map((lenguage, index) => <li key= {index}>{lenguage.english_name} </li>)}
+          {movieId.spoken_languages?.map((lenguage, index) => <li key= {index}>{lenguage.english_name} </li>)}
           <h5 className="color-text1">Generos:</h5>
-          {genres.map((genre, index) => <li key= {index}> {genre.name} </li>)} 
+          {movieId.genres?.map((genre, index) => <li key= {index}> {genre.name} </li>)} 
         </ul>
       </div>
       <img className="img-detail2"src={URL+ movieId.backdrop_path} alt ={movieId.title}/>
@@ -57,10 +52,3 @@ export default function Detail() {
     </>
   )
 }
-
-
-// hacer foto de logo bien linea blanca abajo de logo
-// fotter terminar imagen flashera
-// header barrra y botenes de sing in y login
-// condicional de spiner para cuando carga
-// ver porque mierda se flashea en peliculas como shang chi and legend

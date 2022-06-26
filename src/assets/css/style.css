@@ -1,41 +1,55 @@
 *{  box-sizing: border-box;
+    background-color: black; 
     }
+.home-container{
+    background-color: black;
+}
 
 .list-group-movies{
     display: flex;
     flex-wrap: wrap;
-    background-color: black;
+    margin-bottom: 3%;
 }
-.one-movie{
-    margin:1% 1% 0% 2%;
+.div-movie{
+    margin:1% 0% 1% 2%;
+    box-shadow: 2px 3px 2px 5px rgba(255, 127, 80, 0.5);
+    
 }
+
 .img-detail1{
     margin: auto;
     width: 25%;
+    box-shadow: 2px 3px 2px 5px rgba(255, 127, 80, 0.5);
     
     
 }
 .img-detail2{
     margin: auto;
     width: 50%;
+    box-shadow: 2px 3px 2px 5px rgba(255, 127, 80, 0.5);
     
 }
-
+input{
+    background-color: whitesmoke;
+}
 .group-menu-buttons{
    text-align: right;
-   margin: 2% 25% 
+   margin: 1% 5% 1% 0%;
+   background-color: transparent;
 }
 .button-menu{
     margin-left: 10px;
+    padding:1%;
     margin-block-end: auto;
-    border-radius: 12% solid 5px;
+    border: solid 3px;
+    border-radius: 15% ;
     border-color: coral;
     background-color: black;
     color:coral
 }
 .search-bar{
-    text-align: center;
-    color: coral
+    margin-left: 2%;
+    color: coral;
 }
 
 .search-bar-input{ 
@@ -43,17 +57,16 @@
     border-color: coral;
 }
 .header-logo{
-    background-color:black;
     background-repeat: no-repeat;
     background-image: url("../img/cinema-logo2.jpg");
     background-size: 100%;
     padding: 30% 0% 0% 0%;
+    margin-bottom:0%;
     
 }
 .color-text1{
     color: white;
-    margin-right: 40%;
-    margin: 1% 0% 0% 0%;
+    margin: 2% 0% 0% 0%;
     
 }
 .u-list{
@@ -63,7 +76,7 @@
 }
 .title1 {
     text-align: center;
-    padding-right: 40%;
+    margin-right: auto;
     color:coral;
     text-transform: uppercase;
     
@@ -74,32 +87,21 @@
 }
 
 .list-group-footer{
+    margin-left: 7%;
     display: flex;
     flex-wrap: wrap;
-    background-color: black;
+    
 }
 .div-footer{
-    margin: 6% 1% 6% 0%;
+    margin-left: 10%
 }
-.footer-logo{
-    background-position: right;
-    background-image: url("../img/retro-de-cámara-cine-vectores-afiches-películas-ilustración-vectorial-171210014.jpg");
-    background-repeat: no-repeat;
-    background-size: 50%;
-    padding: 0;
-    margin: 0% 10% 0% 10%;
-
-}
-
 .inputs{
     margin: 1%;
     padding-right:30%;
     border-radius: 5%;
     border: 3px solid coral;
 }
-.footer-container{
-    background-color: black;
-}
+
 @media (min-width: 375px) {
     .list-group-movies{
         text-align: center;
