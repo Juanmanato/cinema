@@ -48,31 +48,6 @@ const searcher = (event) => {
 const results = !search ? data : data?.filter((result) => 
 result.title.toLowerCase().includes(search.toLowerCase()))
 
-const [ranked, setRanked] = useState()
-const rank = (event) =>{
-  setRanked(event.target.value)
-  
-}
-const ranking = Movies.filter(vote => {
-  if (ranked <= 2){
-    return vote.vote_average <= 2
-  }
-  else if (ranked <= 4){
-    return vote.vote_average <= 4
-  }
-  else if (ranked <= 6){
-    return vote.vote_average <= 6 
-  }
-  else if (ranked <=8){
-    return  vote.vote_average <= 8
-  }
-  else {
-    return vote.vote_average  <= 10
-  }
-} )
-console.log(ranking)
-
-
   return (
     <div >
       <div className="search-bar">
@@ -88,7 +63,7 @@ console.log(ranking)
     {!results && <>
      <h1 className="title1">List of Movies</h1>
      <div className="list-group-movies">
-     {Movies?.map((movie, index) => { return <Movie key={index} {...movie} {...rank ? rank : !rank} />})}
+     {Movies?.map((movie, index) => { return <Movie key={index} {...movie}/>})}
      </div>
      </>} 
     </div>
