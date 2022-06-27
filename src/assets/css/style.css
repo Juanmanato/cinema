@@ -101,9 +101,3 @@ input{
     border-radius: 5%;
     border: 3px solid coral;
 }
-
-@media (min-width: 375px) {
-    .list-group-movies{
-        text-align: center;
-    }
-}

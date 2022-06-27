@@ -8,13 +8,11 @@ function App() {
 
   return (
     <div >
-      
         <Router>
         <Header/>
         <PublicRoute/>
         <Footer/>
         </Router>
-      
     </div>
   );
 }
