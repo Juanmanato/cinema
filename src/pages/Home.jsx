@@ -60,7 +60,7 @@ result.title.toLowerCase().includes(search.toLowerCase()))
     {results?.map((result, index) => <MovieResults key={index} {...result} />)}
     </div> }
 
-    {!results && <>
+    {results && <>
      <h1 className="title1">List of Movies</h1>
      <div className="list-group-movies">
      {Movies?.map((movie, index) => { return <Movie key={index} {...movie}/>})}
